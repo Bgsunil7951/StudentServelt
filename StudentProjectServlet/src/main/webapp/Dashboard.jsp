@@ -48,7 +48,7 @@ header{
 .dash{
     width: 100%;
     height: 100vh;
-    background-color: rgb(202, 224, 216);
+   
 }
 .main-user h1{
     color: #333;
@@ -82,12 +82,12 @@ header{
 .table-containt td{
     width: 100%;
     text-align: center;
-    border: 1px solid black;
+    
     padding: 10px;
 }
 .table-data th{
     width: 100%;
-    border: 1px solid black;
+   
     text-align: center;
     padding: 10px;
     
@@ -99,7 +99,7 @@ header{
     justify-content:space-between;
     align-items: center;
     background-color: white;
-    border: 1px solid black;
+   
     margin-top: 1px;
 }
 #btn1{

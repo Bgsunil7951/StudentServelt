@@ -53,7 +53,7 @@ header{
 .dash{
     width: 100%;
     height: 100vh;
-    background-color: rgb(202, 224, 216);
+   
 }
 .main-user h1{
     color: #333;
@@ -104,7 +104,7 @@ header{
     justify-content:space-between;
     align-items: center;
     background-color: white;
-    border: 1px solid black;
+    
     margin-top: 1px;
 }
 #btn1{
@@ -114,6 +114,16 @@ header{
     font-size: 1rem;
     font-weight: bold;
     background-color: blue;
+    border-radius: 5px;
+    
+}
+#btn2{
+ width: 70px;
+ height:25px;
+ color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: red;
     border-radius: 5px;
     
 }
@@ -143,7 +153,17 @@ List<Student> list=sdao.getStudent();%>
                	</form>
             </nav>
         </header>
-       
+       <%String success=(String) request.getAttribute("success");
+     if(success!=null){%>
+     
+     <h1 class="text-2xl text-center font-bold text-green-600"> <%=success%></h1>
+     <%}%>
+     <%String fail=(String) request.getAttribute("failure");
+     if(fail!=null){%>
+ 
+    <h1 class=" text-2xl text-center font-bold text-red-600"> <%=fail%></h1>
+  
+     <%}%>
 
         <section  class="dash">
             <div class="main-user">
@@ -171,7 +191,10 @@ List<Student> list=sdao.getStudent();%>
                         <td><%=s1.getBranch() %> </td>
                         <td><%=s1.getLocation()%> </td>
                         <td>
-                        <input >
+                        <form action="delete" method="post">
+                         	<input  type="hidden" value="<%=s1.getId()%>" name="delete">
+                         	<input id="btn2" type="submit" value="Delete" >
+                        </form>
                         </td>
                     </tr>
 				<%} %>
